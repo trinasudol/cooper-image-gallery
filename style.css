@@ -86,6 +86,7 @@ img {
 
 .photo:hover {
     border: 5px double #bd8c7d;
+    cursor: pointer;
 }
 
 .photo img:hover {
@@ -126,6 +127,10 @@ img {
     height: 24px;
     background-color: #d4d4dc;
     border-radius: 50%;
+}
+
+.hover:hover {
+    cursor: pointer;
 }
 
 #close-button {
