@@ -16,6 +16,9 @@ function openFullSize(event) {
         // var captionSelector = "#image-" + imageNum + " .caption";
         // var caption = thumbNails.querySelectorAll(captionSelector)[0].innerHTML;
         // document.getElementById("caption").innerHTML = caption;
+    if (fullSizeBox.style.display == "inline-block") {
+        window.scrollTo(0,120);
+    }
     fullSizeBox.style.display = "inline-block";
     // thumbNails.style.display = "none";
 }
@@ -42,6 +45,9 @@ function slideLeft() {
         }
         document.getElementById("fullsize-image").innerHTML = fullSizeImage;
     }
+    else if (currImage==1) {
+        document.getElementById("fullsize-image").innerHTML = '<img src="12.jpg" alt="12" width="30">';
+    }
 }
 
 function slideRight() {
@@ -59,6 +65,9 @@ function slideRight() {
         }
         document.getElementById("fullsize-image").innerHTML = fullSizeImage;
     }
+    else if (currImage==12) {
+        document.getElementById("fullsize-image").innerHTML = '<img src="1.gif" alt="1" width="30">';
+    }
 }
 
 var closeButton = document.getElementById("close-button");
@@ -75,6 +84,9 @@ var hoverElements = document.getElementsByClassName("hover");
 // make full image buttons only appear on hover
 fullSizeBox.addEventListener("mouseover", showButtons);
 fullSizeBox.addEventListener("mouseout", hideButtons);
+
+// close full size image by double clicking
+fullSizeBox.addEventListener("dblclick", closeFullSize);
 
 function showButtons() {
     for (i=0; i<hoverElements.length; i++) {
